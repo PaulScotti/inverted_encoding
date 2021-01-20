@@ -1,14 +1,14 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open("README.md","r") as fh:
     long_description = fh.read()
 
 setup(
     name='inverted_encoding',
-    version='0.0.13',
+    version='0.0.14',
     description='Implementation of inverted encoding model as described in Scotti, Chen, & Golomb',
     py_modules=["inverted_encoding"],
-    package_dir={'':'src'},
+    packages=find_packages(),
     url="https://github.com/paulscotti/inverted_encoding",
     author="Paul S. Scotti",
     author_email="scottibrain@gmail.com",
@@ -18,8 +18,7 @@ setup(
         "numpy",
         "scipy",
         "matplotlib",
-        "sklearn",
-    ],
+        "sklearn"],
 )
 
 # pip3 install check-manifest twine 
