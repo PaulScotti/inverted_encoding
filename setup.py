@@ -5,7 +5,7 @@ with open("README.md","r") as fh:
 
 setup(
     name='inverted_encoding',
-    version='0.0.12',
+    version='0.0.13',
     description='Implementation of inverted encoding model as described in Scotti, Chen, & Golomb',
     py_modules=["inverted_encoding"],
     package_dir={'':'src'},
