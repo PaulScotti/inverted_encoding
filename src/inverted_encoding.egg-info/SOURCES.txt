@@ -4,6 +4,7 @@ MANIFEST.in
 README.md
 setup.py
 dist/inverted_encoding-0.0.1-py2-none-any.whl
+dist/inverted_encoding-0.0.11-py2-none-any.whl
 src/.DS_Store
 src/inverted_encoding.py
 src/inverted_encoding.egg-info/PKG-INFO

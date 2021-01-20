@@ -5,7 +5,7 @@ with open("README.md","r") as fh:
 
 setup(
     name='inverted_encoding',
-    version='0.0.1',
+    version='0.0.12',
     description='Implementation of inverted encoding model as described in Scotti, Chen, & Golomb',
     py_modules=["inverted_encoding"],
     package_dir={'':'src'},
@@ -30,6 +30,6 @@ setup(
 # check-manifest --c
 # git add MANIFEST.in
 
-# twine upload dist/*
+# twine upload --skip-existing dist/*
 # or try cookiecutter
 # tutorial on publishing python packages: www.youtube.com/watch?v=GIF3LaRqgXo

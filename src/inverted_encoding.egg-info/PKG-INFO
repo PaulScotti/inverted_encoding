@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: inverted-encoding
-Version: 0.0.1
+Version: 0.0.12
 Summary: Implementation of inverted encoding model as described in Scotti, Chen, & Golomb
 Home-page: https://github.com/paulscotti/inverted_encoding
 Author: Paul S. Scotti
