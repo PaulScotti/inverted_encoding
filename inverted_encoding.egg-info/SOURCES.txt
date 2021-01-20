@@ -11,10 +11,10 @@ dist/inverted_encoding-0.0.14-py2-none-any.whl
 dist/inverted_encoding-0.0.15-py2-none-any.whl
 dist/inverted_encoding-0.0.16-py2-none-any.whl
 dist/inverted_encoding-0.0.17-py2-none-any.whl
+dist/inverted_encoding-0.0.18-py2-none-any.whl
+inverted_encoding/__init__.py
 inverted_encoding.egg-info/PKG-INFO
 inverted_encoding.egg-info/SOURCES.txt
 inverted_encoding.egg-info/dependency_links.txt
 inverted_encoding.egg-info/requires.txt
 inverted_encoding.egg-info/top_level.txt
-package/__init__.py
-package/inverted_encoding.py
