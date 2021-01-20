@@ -1,5 +1,9 @@
 # Inverted Encoding
 
+Python package for easy implementation of inverted encoding modeling as described in Scotti, Chen, & Golomb (in-prep).
+
+Contact: scottibrain@gmail.com (Paul Scotti)
+
 ---
 
 ## Installation 

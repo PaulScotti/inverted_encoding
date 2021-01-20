@@ -23,9 +23,12 @@ setup(
 )
 
 # pip3 install check-manifest twine 
+
+# python setup.py bdist_wheel sdist
+
 # check-manifest --create
 # git add MANIFEST.in
-# python setup.py bdist_wheel sdist
+
 # twine upload dist/*
 # or try cookiecutter
 # tutorial on publishing python packages: www.youtube.com/watch?v=GIF3LaRqgXo

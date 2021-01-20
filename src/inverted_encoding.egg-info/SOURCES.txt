@@ -1,6 +1,13 @@
+.gitignore.txt
+LICENSE.txt
+MANIFEST.in
+README.md
 setup.py
+dist/inverted_encoding-0.0.1-py2-none-any.whl
+src/.DS_Store
 src/inverted_encoding.py
 src/inverted_encoding.egg-info/PKG-INFO
 src/inverted_encoding.egg-info/SOURCES.txt
 src/inverted_encoding.egg-info/dependency_links.txt
+src/inverted_encoding.egg-info/requires.txt
 src/inverted_encoding.egg-info/top_level.txt

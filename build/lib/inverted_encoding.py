@@ -67,9 +67,29 @@ def find_vm_sd(channel_responses,plotting=False):
     return np.arange(10,180)[np.argmin(losses)]
 
 ## Main functions
-def inverted_encoding(trialbyvoxel,features,nfolds=10,stim_max=360,
+def IEM(trialbyvoxel,features,nfolds=10,stim_max=360,
                       nchannels=9,channel_sd=None,channel_mus=None,
                       is_circular=True,plot_basis_set=False):
+    """
+    returns predictions, confidences, recons
+
+    This is a longer explanation, which may include math with latex syntax
+    :math:`\\alpha`.
+
+    :param trialbyvoxel: the first value
+    :param features: the first value
+    :param nfolds: the first value
+    :type arg1: int, float,...
+    :type arg2: int, float,...
+    :type arg3: int, float,...
+    :returns: arg1/arg2 +arg3
+
+    :Example:
+
+    >>> from inverted_encoding import IEM
+    >>> predictions, confidences, recons = IEM(trialbyvoxel,features,stim_max=180,is_circular=True)
+    """
+
     np.random.seed(1) # make procedure reproducible by setting rng
     ntrials = len(features)
     
