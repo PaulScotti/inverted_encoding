@@ -1,3 +1,6 @@
+from .inverted_encoding import *
+__version__ = '0.0'
+
 ## Import packages
 import numpy as np
 import scipy as sp
