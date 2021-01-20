@@ -1,14 +1,14 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 with open("README.md","r") as fh:
     long_description = fh.read()
 
 setup(
     name='inverted_encoding',
-    version='0.0.14',
+    version='0.0.15',
     description='Implementation of inverted encoding model as described in Scotti, Chen, & Golomb',
     py_modules=["inverted_encoding"],
-    packages=find_packages(),
+    package_dir={'':'src'},
     url="https://github.com/paulscotti/inverted_encoding",
     author="Paul S. Scotti",
     author_email="scottibrain@gmail.com",

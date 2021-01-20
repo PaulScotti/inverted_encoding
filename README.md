@@ -19,10 +19,10 @@ pip install inverted_encoding
 ## Usage
 
 ```python
-from inverted_encoding import IEM, permutation
+import inverted_encoding
 
-predictions, confidences, recons = IEM(trialbyvoxel,features,stim_max=180,is_circular=True)
+predictions, confidences, recons = inverted_encoding.IEM(trialbyvoxel,features,stim_max=180,is_circular=True)
 
-null_mae_distribution = permutation(features,stim_max=180,num_perm=1000)
+null_mae_distribution = inverted_encoding.permutation(features,stim_max=180,num_perm=1000)
 ```
 
