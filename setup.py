@@ -18,15 +18,16 @@ setup(
         "numpy",
         "scipy",
         "matplotlib",
-        "sklearn.model_selection",
+        "sklearn",
     ],
 )
 
 # pip3 install check-manifest twine 
+# pip3 install -e .
 
 # python setup.py bdist_wheel sdist
 
-# check-manifest --create
+# check-manifest --c
 # git add MANIFEST.in
 
 # twine upload dist/*
