@@ -23,9 +23,14 @@ from inverted_encoding import IEM, permutation, circ_diff
 import numpy as np
 
 predictions, confidences, recons = IEM(trialbyvoxel,features,stim_max=180,is_circular=True)
+# use "help(IEM)" for more information on required inputs, below is a summary:
 # trialbyvoxel: your matrix of brain activations, does not necessarily have to be voxels
 # features: array of your stimulus features (must be integers within range defined by stim_max)
-# use "help(IEM)" for more information on required inputs
+# stim_max=180 means that your stimulus space ranges 0-179° degrees
+# is_circular=True for a circular stimulus space, False for non-circular stimulus space
+# predictions: array of predicted stimulus for each trial
+# confidences: array of goodness of fit values for each trial
+# recons: trial-by-trial reconstructions (matrix of num_trials x stim_max)
 
 ## Compute mean absolute error (MAE) by doing the following, then compare to null distribution:
 if is_circular: # if your stimulus space is circular, need to compute circular differences

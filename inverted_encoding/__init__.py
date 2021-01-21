@@ -1,4 +1,4 @@
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 ## Import packages
 import numpy as np
@@ -95,7 +95,7 @@ def IEM(trialbyvoxel,features,stim_max=180,is_circular=True,nfolds=10,
 
     Parameters
     ----------
-    trialbyvoxel : matrix
+    trialbyvoxel : matrix (ndarray)
         A matrix of brain activations with shape num_trials by num_voxels (or num_electrodes/num_components/etc.)
     features : int, array
         The stimulus features for every trial, in the same order as the trials specified by trialbyvoxel. All features must be within the range of stimulus space specified by stim_max. All features will be converted to integers if not already.
