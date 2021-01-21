@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: inverted-encoding
-Version: 0.0.18
+Version: 0.0.19
 Summary: Implementation of inverted encoding model as described in Scotti, Chen, & Golomb
 Home-page: https://github.com/paulscotti/inverted_encoding
 Author: Paul S. Scotti
@@ -19,7 +19,7 @@ Description: # Inverted Encoding
         Run the following to install:
         
         ```python
-        pip install inverted_encoding
+        pip install inverted-encoding
         ```
         
         ---
@@ -27,11 +27,20 @@ Description: # Inverted Encoding
         ## Usage
         
         ```python
-        import inverted_encoding
+        from inverted_encoding import IEM, permutation, circ_diff
+        import numpy as np
         
-        predictions, confidences, recons = inverted_encoding.IEM(trialbyvoxel,features,stim_max=180,is_circular=True)
+        predictions, confidences, recons = IEM(trialbyvoxel,features,stim_max=180,is_circular=True)
+        # trialbyvoxel: your matrix of brain activations, does not necessarily have to be voxels
+        # features: array of your stimulus features (must be integers within range defined by stim_max)
+        # use "help(IEM)" for more information on required inputs
         
-        null_mae_distribution = inverted_encoding.permutation(features,stim_max=180,num_perm=1000)
+        ## Compute mean absolute error (MAE) by doing the following, then compare to null distribution:
+        if is_circular: # if your stimulus space is circular, need to compute circular differences
+            mae = np.mean(np.abs(circ_diff(predictions,features,stim_max))) 
+        else:
+            mae = np.mean(np.abs(predictions-features)) 
+        null_mae_distribution = permutation(features,stim_max=180,num_perm=1000,is_circular=True)
         ```
         
         
