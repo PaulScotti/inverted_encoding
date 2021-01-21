@@ -5,7 +5,7 @@ with open("README.md","r") as fh:
 
 setup(
     name='inverted_encoding',
-    version='0.0.2',
+    version='0.0.20',
     description='Implementation of inverted encoding model as described in Scotti, Chen, & Golomb',
     packages=['inverted_encoding'],
     url="https://github.com/paulscotti/inverted_encoding",
