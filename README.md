@@ -22,7 +22,7 @@ pip install inverted-encoding
 from inverted_encoding import IEM, permutation, circ_diff
 import numpy as np
 
-predictions, confidences, recons = IEM(trialbyvoxel,features,stim_max=180,is_circular=True)
+predictions, confidences, aligned_at_prediction_recons, aligned_at_zero_recons = IEM(trialbyvoxel,features,stim_max=180,is_circular=True)
 # use "help(IEM)" for more information, below is a summary:
 # trialbyvoxel: your matrix of brain activations, does not necessarily have to be voxels
 # features: array of your stimulus features (must be integers within range defined by stim_max)
@@ -30,7 +30,10 @@ predictions, confidences, recons = IEM(trialbyvoxel,features,stim_max=180,is_cir
 # is_circular=True for a circular stimulus space, False for non-circular stimulus space
 # predictions: array of predicted stimulus for each trial
 # confidences: array of goodness of fit values for each trial
-# recons: trial-by-trial reconstructions (matrix of num_trials x stim_max)
+# aligned_at_prediction_recons: trial-by-trial reconstructions (matrix of num_trials x stim_max) such that
+# when plotted ideally each reconstruction is centered at the original trial stimulus
+# aligned_at_zero_recons: trial-by-trial reconstructions aligned at zero, such that when
+# plotted ideally each reconstruction is centered at zero on the x axis (e.g., plt.plot(aligned_at_zero_recons[trial,:]))
 
 ## Compute mean absolute error (MAE) by doing the following, then compare to null distribution:
 if is_circular: # if your stimulus space is circular, need to compute circular differences
