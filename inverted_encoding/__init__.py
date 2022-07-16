@@ -1,4 +1,4 @@
-__version__ = '0.1.9'
+__version__ = '0.2.2'
 
 ## Import packages
 import numpy as np
@@ -66,7 +66,7 @@ def rotate(l,dist):
     return np.array(l)
 
 ## Main functions
-def IEM(trialbyvoxel,features,stim_max=180,is_circular=True,nfolds=10,
+def IEM(trialbyvoxel,features,stim_max,nfolds,is_circular=True,
                       nchannels=9,channel_sd=None,channel_mus=None,
                       plot_basis_set=False,calc_confidence=True):
     """
@@ -78,8 +78,10 @@ def IEM(trialbyvoxel,features,stim_max=180,is_circular=True,nfolds=10,
         A matrix of brain activations with shape num_trials by num_voxels (or num_electrodes/num_components/etc.)
     features : int, array
         The stimulus features for every trial, in the same order as the trials specified by trialbyvoxel. All features must be within the range of stimulus space specified by stim_max. All features will be converted to integers if not already.
-    stim_max : int, optional
+    stim_max : int
         Specifies the range of stimulus space, such that all features are assumed to be within the range of zero to stim_max-1. E.g., if studying color within a 360° stimulus space, you must change this value to 360 and ensure that all features are integers within 0-359. Defaults to 0-179° stimulus space.
+    nfolds : int
+        Specifies the K in KFold for cross-validation. Defaults to not not shuffling data before splitting into batches. We recommend setting K to the number of runs for one-run-left-out cross-validation.
     is_circular: bool, optional
         Specifies whether the stimulus space is circular or not. Defaults to True. E.g., for orientation and color, stimulus space is typically circular (170° and 0° are the same distance away from 175°, assuming stim_max=180); however, for spatial location, you would typically not want a circular stimulus space. 
     nfolds : int, optional
@@ -169,7 +171,7 @@ def IEM(trialbyvoxel,features,stim_max=180,is_circular=True,nfolds=10,
 
         cr_tsts = np.full((len(tstf),stim_max),np.nan)
         for sh in range(stim_max):
-            if ~np.any(np.isnan(cr_tsts)):
+            if ~np.any(np.isnan(cr_tsts)) or np.any((est_mus+sh)>=stim_max):
                 break
             if is_circular:
                 basis_set = make_gaussian_iter(est_mus+sh,sd*np.ones(stim_max),stim_max)

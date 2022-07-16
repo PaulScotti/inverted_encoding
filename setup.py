@@ -5,7 +5,7 @@ with open("README.md","r") as fh:
 
 setup(
     name='inverted_encoding',
-    version='0.1.9',
+    version='0.2.2',
     description='Implementation of inverted encoding model as described in Scotti, Chen, & Golomb',
     packages=['inverted_encoding'],
     url="https://github.com/paulscotti/inverted_encoding",
@@ -14,10 +14,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     install_requires = [
-        "numpy",
-        "scipy",
-        "matplotlib",
-        "sklearn"],
+        "numpy"],
 )
 
 # pip3 install check-manifest twine 
