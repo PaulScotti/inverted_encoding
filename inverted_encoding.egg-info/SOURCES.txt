@@ -30,6 +30,7 @@ dist/inverted_encoding-0.1.9-py2-none-any.whl
 dist/inverted_encoding-0.2.0-py2-none-any.whl
 dist/inverted_encoding-0.2.1-py2-none-any.whl
 dist/inverted_encoding-0.2.2-py3-none-any.whl
+dist/inverted_encoding-0.2.3-py3-none-any.whl
 inverted_encoding/__init__.py
 inverted_encoding.egg-info/PKG-INFO
 inverted_encoding.egg-info/SOURCES.txt
